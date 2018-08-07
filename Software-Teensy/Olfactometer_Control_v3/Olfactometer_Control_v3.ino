@@ -182,7 +182,7 @@ void readFromUSB() {
 	if (Serial.available() > 0) {
 		// read next char if available
 		char inByte = Serial.read();
-		if (inByte == '\n') {
+		if ((inByte == '\n') || (inByte == ';')){
 			// the new-line character ('\n') indicates a complete message
 			// so interprete the message and then clear buffer
 			interpretUSBMessage(usbMessage);
