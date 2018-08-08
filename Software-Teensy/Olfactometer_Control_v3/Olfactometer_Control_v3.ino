@@ -183,7 +183,8 @@ void readFromUSB() {
 		// read next char if available
 		char inByte = Serial.read();
 		if ((inByte == '\n') || (inByte == ';')){
-			// the new-line character ('\n') indicates a complete message
+			// the new-line character ('\n') or the ';' character
+			// indicate a complete message.
 			// so interprete the message and then clear buffer
 			interpretUSBMessage(usbMessage);
 			usbMessage = ""; // clear message buffer
@@ -256,11 +257,25 @@ void interpretUSBMessage(String message) {
 
 	switch (command) {
 
+		// A: abort program
+		case 'A':
+		case 'a':
+			if (isRunning) {
+				isRunning = false;
+				prog_index = 0;
+				if (ONE_VALVE_OPEN) {
+					CloseValve(0);
+				}
+			}
+			break;
+
 		// X: erase program
 		case 'X':
 		case 'x':
-			prog_index = 0;
-			prog_len = 0;
+			if (!isRunning) {
+				prog_index = 0;
+				prog_len = 0;
+			}
 			break;
 
 		// P: print program
@@ -272,29 +287,33 @@ void interpretUSBMessage(String message) {
 		// O: add valve [O]pen command
 		case 'O':
 		case 'o':
-			// check we don't exceed max commands
-			if (prog_len == MAX_PROG_LEN) {
-				USB_Error_MaxProgLen();
-				break;
+			if (!isRunning) {
+				// check we don't exceed max commands
+				if (prog_len == MAX_PROG_LEN) {
+					USB_Error_MaxProgLen();
+					break;
+				}
+				cmd_list[prog_len] = CMD_OPEN;
+				valve_list[prog_len] = arg1;
+				duration_ms_list[prog_len] = arg2;
+				prog_len += 1;
 			}
-			cmd_list[prog_len] = CMD_OPEN;
-			valve_list[prog_len] = arg1;
-			duration_ms_list[prog_len] = arg2;
-			prog_len += 1;
 			break;
 
 		// C: add valve [C]lose command
 		case 'C':
 		case 'c':
-			// check we don't exceed max commands
-			if (prog_len == MAX_PROG_LEN) {
-				USB_Error_MaxProgLen();
-				break;
+			if (!isRunning) {
+				// check we don't exceed max commands
+				if (prog_len == MAX_PROG_LEN) {
+					USB_Error_MaxProgLen();
+					break;
+				}
+				cmd_list[prog_len] = CMD_CLOSE;
+				valve_list[prog_len] = arg1;
+				duration_ms_list[prog_len] = arg2;
+				prog_len += 1;
 			}
-			cmd_list[prog_len] = CMD_CLOSE;
-			valve_list[prog_len] = arg1;
-			duration_ms_list[prog_len] = arg2;
-			prog_len += 1;
 			break;
 
 
