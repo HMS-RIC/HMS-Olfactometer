@@ -15,9 +15,12 @@ void OpenValve(int valveNum) {
 
 	// open the valve
 	digitalWrite(all_valves[valveNum-1], HIGH);
+	valve_status_list[valveNum-1] = VALVE_OPEN_2;
 	// close the currenly open valve, if necessary
 	if (ONE_VALVE_OPEN) {
 		digitalWrite(all_valves[current_valve-1], LOW);
+		valve_status_list[current_valve-1] = VALVE_CLOSED;
+
 //    	if (current_valve==1) {
 //            Serial.println("-- V1 Closed --");
 //    }
@@ -48,7 +51,8 @@ void CloseValve(int valveNum) {
 		}
 		return;
 	}
-	if (digitalRead(all_valves[valveNum-1]) == LOW) {
+	// if (digitalRead(all_valves[valveNum-1]) == LOW) {
+	if (valve_status_list[valveNum-1] == VALVE_CLOSED) {
 		Serial.print("Cannot close valve "); Serial.print(valveNum); Serial.println(", it's not open.");
 		return;
 	}
@@ -59,11 +63,14 @@ void CloseValve(int valveNum) {
 
 	// close valve
 	digitalWrite(all_valves[valveNum-1], LOW);
+	valve_status_list[valveNum-1] = VALVE_CLOSED;
 
 	// open valve 1 if necessary
 	if (ONE_VALVE_OPEN) {
 		current_valve = 1;
 		digitalWrite(V1, HIGH);
+		valve_status_list[0] = VALVE_OPEN_2;
+
 //    Serial.println("-- V1 Open --");
 		if (TRIGGER_WHEN_OPEN && BNC2_OUTPUT) {
 			digitalWrite(BNC2_pin, LOW);
@@ -76,3 +83,20 @@ void CloseValve(int valveNum) {
 	}
 }
 
+void updateValves() {
+	for (int valve = 0; valve < NUM_VALVES; valve++) {
+		// test for VALVE_CLOSED first, since it's most likely
+		if (valve_status_list[valve] > VALVE_CLOSED) {
+			if (valve_status_list[valve] == VALVE_OPEN_2) {
+				valve_status_list[valve] = VALVE_OPEN_1;
+			} else if (valve_status_list[valve] == VALVE_OPEN_1) {
+				if (digitalPinHasPWM(all_valves[valve])) {
+					valve_status_list[valve] = VALVE_PWM;
+					analogWrite(all_valves[valve], 127);
+				} else {
+					valve_status_list[valve] = VALVE_NO_PWM;
+				}
+			}
+		}
+	}
+}

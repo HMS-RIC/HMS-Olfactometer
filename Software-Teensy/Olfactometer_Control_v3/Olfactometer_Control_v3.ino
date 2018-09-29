@@ -24,7 +24,7 @@ const bool DISPLAY_VALVE_STATUS = true; // Write all valve openings/closing to U
 const bool VERBOSE_OUTPUT = true;   // if true:  send user readable output over USB                   (e.g., "Valve 3 CLOSED")
 																	// if false: send coded output, e.g., for Matlab to interpret     (e.g., "C 3" )
 
-const int NUM_VALVES = 16; // actual number of valves wired up
+const int NUM_VALVES = 32; // actual number of valves wired up
 
 float CARRIER_FLOW_RATE = 1.0; // in LPM
 float ODOR_FLOW_RATE    = 0.1; // in LPM
@@ -44,9 +44,18 @@ uint8_t  cmd_list         [MAX_PROG_LEN]; // command (open, close, etc)
 uint8_t  valve_list       [MAX_PROG_LEN]; // valve num
 uint32_t duration_ms_list [MAX_PROG_LEN]; // duration in ms
 
-#define CMD_NOOP 0
-#define CMD_OPEN 1
-#define CMD_CLOSE 2
+#define CMD_NOOP  (0)
+#define CMD_OPEN  (1)
+#define CMD_CLOSE (2)
+
+// For valve PWM
+uint8_t valve_status_list[MAX_NUM_VALVES];
+#define VALVE_CLOSED (0)
+#define VALVE_NO_PWM (1)
+#define VALVE_PWM    (2)
+#define VALVE_OPEN_1 (3)
+#define VALVE_OPEN_2 (4)
+
 
 // =================================
 
@@ -63,6 +72,7 @@ void setup() {
 	for (int i=0; i<MAX_NUM_VALVES; i++) {
 		pinMode(all_valves[i], OUTPUT);
 		digitalWrite(all_valves[i], LOW);
+		valve_status_list[i] = VALVE_CLOSED;
 	}
 	pinMode(VAux1_pin, OUTPUT);
 	digitalWrite(VAux1_pin, LOW);
@@ -70,6 +80,7 @@ void setup() {
 	digitalWrite(VAux2_pin, LOW);
 	if (ONE_VALVE_OPEN) {
 		digitalWrite(V1, HIGH);
+		valve_status_list[0] = VALVE_OPEN_2;
 	}
 
 	// Set up pins for BNC input/output
@@ -141,6 +152,10 @@ void loop() {
 
 	if (isRunning) {
 		updateProgram();
+	}
+
+	if (millis() % 500) {
+		updateValves();
 	}
 }
 
