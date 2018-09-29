@@ -4,6 +4,10 @@
 int current_valve = 1;
 void OpenValve(int valveNum) {
 	// error checking
+	if ((valveNum > NUM_VALVES) || (valveNum == 0)) {
+		Serial.print("Error: Bad valve number ("); Serial.print(valveNum); Serial.println(").");
+		return;
+	}
 	if (digitalRead(all_valves[valveNum-1]) == HIGH) {
 		Serial.print("Valve "); Serial.print(valveNum); Serial.println("already open.");
 		return;
@@ -45,6 +49,10 @@ void OpenValve(int valveNum) {
 
 void CloseValve(int valveNum) {
 	// error checking
+	if ((valveNum > NUM_VALVES)) {
+		Serial.print("Error: Bad valve number ("); Serial.print(valveNum); Serial.println(").");
+		return;
+	}
 	if (ONE_VALVE_OPEN && (valveNum == 0)) {
 		if (current_valve > 1) {
 			CloseValve(current_valve);
