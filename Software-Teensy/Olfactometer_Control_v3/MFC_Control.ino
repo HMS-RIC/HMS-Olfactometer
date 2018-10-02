@@ -1,8 +1,6 @@
 // =======================================
 // MFC control functions
 
-#ifndef NO_MFC
-
 const bool MFC_DEBUG = false;
 const int command_delay_time = 10;
 char MFCBuffer[1024];
@@ -260,7 +258,4 @@ void changeMCFAddress_Carrier() {
 	changeMCFAddress_core(carrier_address,"CARRIER");
 }
 // ============================================
-
-#endif // NO_MFC
-
 

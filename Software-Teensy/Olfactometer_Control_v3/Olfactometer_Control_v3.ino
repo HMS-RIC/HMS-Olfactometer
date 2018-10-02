@@ -1,12 +1,6 @@
 
 #include "Olfactometer_header.h"
 
-
-// TODO: Get rid of this #define, right?????
-// Uncomment the following line to run in debug mode on an Ardunio Uno
-// Comment it out when running for real on Arduino Micro
-//#define NO_MFC
-
 // User-modifiable global settings:
 // =================================
 
@@ -79,11 +73,9 @@ void setup() {
 	}
 
 	// start connections with the MFCs (Serial1 / RS485)
-#ifndef NO_MFC
 	pinMode(RTS_pin, OUTPUT);
 	digitalWrite(RTS_pin, LOW); // RTS low
 	Serial1.begin(9600);
-#endif
 
 	// start USB connection with the computer
 	Serial.begin(9600);
@@ -101,7 +93,6 @@ void setup() {
 	}
 
 	// Setup MFCs
-#ifndef NO_MFC
 	delay(3000); // wait until MFCs are active and ready for input...
 	setupMFC(carrier_address, CARRIER_FLOW_RATE); // set carrier stream to 1 LPM
 	setupMFC(odor_address, ODOR_FLOW_RATE);   // set odor stream to 0.1 LPM
@@ -110,7 +101,6 @@ void setup() {
 	if (VERBOSE_OUTPUT) {
 		printMFCStatus();
 	}
-#endif
 }
 
 
@@ -193,7 +183,6 @@ void BNC1Trigger() {
 }
 
 void printMFCStatus() {
-#ifndef NO_MFC
 	Serial.println(F("CARRIER Flow Rate: "));
 	Serial.print(F(" Set to: "));
 	Serial.print(CARRIER_FLOW_RATE);
@@ -211,9 +200,6 @@ void printMFCStatus() {
 	Serial.print(getMFCFlowRate(odor_address));
 	Serial.println(F(" LPM"));
 	Serial.println("");
-#else
-	Serial.println("No MFC connected.");
-#endif
 }
 
 
@@ -313,20 +299,16 @@ void interpretUSBMessage(String message) {
 		// D: changes o[D]or stream flow rate (in mLPM)
 		case 'D':
 		case 'd':
-#ifndef NO_MFC
 			changeMFCFlowRate(odor_address, arg1/1000.0);
 			delay(1000);
 			USB_CarrierFlowRate(getMFCFlowRate(carrier_address));
-#endif
 			break;
 
 		// R: changes ca[R]rier stream flow rate (in mLPM)
 		case 'R':
 		case 'r':
-#ifndef NO_MFC
 			changeMFCFlowRate(carrier_address, arg1/1000.0);
 			USB_CarrierFlowRate(getMFCFlowRate(carrier_address));
-#endif
 			break;
 
 		// S/s: start connection to Matlab
