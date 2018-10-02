@@ -9,6 +9,11 @@ uint8_t valve_status_list[MAX_NUM_VALVES];
 #define VALVE_OPEN_1 (3)
 #define VALVE_OPEN_2 (4)
 
+
+// FOR DEBUGGING
+// #define digitalWrite(pin, val) digitalWrite((pin), (val)); Serial.print("DWrite "); Serial.print((pin)); Serial.print(" "); Serial.println((val))
+// #define analogWrite(pin, val) analogWrite((pin), (val)); Serial.print("AWrite "); Serial.print((pin)); Serial.print(" "); Serial.println((val))
+
 void setupValves() {
 	// Set up pins for valve control
 	for (int i=0; i<MAX_NUM_VALVES; i++) {
@@ -41,7 +46,7 @@ void OpenValve(int valveNum) {
 		Serial.print("Error: Bad valve number ("); Serial.print(valveNum); Serial.println(").");
 		return;
 	}
-	if (digitalRead(all_valves[valveNum-1]) == HIGH) {
+	if (valve_status_list[valveNum-1] > VALVE_CLOSED) {
 		Serial.print("Valve "); Serial.print(valveNum); Serial.println("already open.");
 		return;
 	}
@@ -56,11 +61,11 @@ void OpenValve(int valveNum) {
 	// close the currenly open valve, if necessary
 	if (ONE_VALVE_OPEN) {
 		digitalWrite(all_valves[current_valve-1], LOW);
+		if (valve_status_list[current_valve-1] == VALVE_PWM) {
+			analogWrite(all_valves[current_valve-1], 0);
+		}
 		valve_status_list[current_valve-1] = VALVE_CLOSED;
 
-//    	if (current_valve==1) {
-//            Serial.println("-- V1 Closed --");
-//    }
 		if (DISPLAY_VALVE_STATUS && (current_valve>1)) {
 			Serial.print("Valve ");
 			Serial.print(current_valve);
@@ -92,7 +97,6 @@ void CloseValve(int valveNum) {
 		}
 		return;
 	}
-	// if (digitalRead(all_valves[valveNum-1]) == LOW) {
 	if (valve_status_list[valveNum-1] == VALVE_CLOSED) {
 		Serial.print("Cannot close valve "); Serial.print(valveNum); Serial.println(", it's not open.");
 		return;
@@ -104,6 +108,9 @@ void CloseValve(int valveNum) {
 
 	// close valve
 	digitalWrite(all_valves[valveNum-1], LOW);
+	if (valve_status_list[valveNum-1] == VALVE_PWM) {
+		analogWrite(all_valves[valveNum-1], 0);
+	}
 	valve_status_list[valveNum-1] = VALVE_CLOSED;
 
 	// open valve 1 if necessary
@@ -125,17 +132,24 @@ void CloseValve(int valveNum) {
 }
 
 void updateValves() {
-	for (int valve = 0; valve < NUM_VALVES; valve++) {
-		// test for VALVE_CLOSED first, since it's most likely
-		if (valve_status_list[valve] > VALVE_CLOSED) {
-			if (valve_status_list[valve] == VALVE_OPEN_2) {
-				valve_status_list[valve] = VALVE_OPEN_1;
-			} else if (valve_status_list[valve] == VALVE_OPEN_1) {
-				if (digitalPinHasPWM(all_valves[valve])) {
-					valve_status_list[valve] = VALVE_PWM;
-					analogWrite(all_valves[valve], 127);
-				} else {
-					valve_status_list[valve] = VALVE_NO_PWM;
+	if ((millis() % 500) == 0) {
+		for (int valve = 0; valve < NUM_VALVES; valve++) {
+			// test for VALVE_CLOSED first, since it's most likely
+			if (valve_status_list[valve] > VALVE_CLOSED) {
+				if (valve_status_list[valve] == VALVE_OPEN_2) {
+					valve_status_list[valve] = VALVE_OPEN_1;
+				} else if (valve_status_list[valve] == VALVE_OPEN_1) {
+					if (digitalPinHasPWM(all_valves[valve])) {
+						valve_status_list[valve] = VALVE_PWM;
+						analogWrite(all_valves[valve], 127);
+						// if (DISPLAY_VALVE_STATUS) {
+						// 	Serial.print("Valve ");
+						// 	Serial.print(valve+1);
+						// 	Serial.println(" PWM (low power).");
+						// }
+					} else {
+						valve_status_list[valve] = VALVE_NO_PWM;
+					}
 				}
 			}
 		}

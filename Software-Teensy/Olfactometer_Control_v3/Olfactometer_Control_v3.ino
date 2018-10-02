@@ -14,15 +14,15 @@ const bool BNC1_OUTPUT = false; // set to true/false for BNC1 to be output/input
 const bool BNC2_OUTPUT = true; // set to true/false for BNC2 to be output/input
 
 const bool ONE_VALVE_OPEN = true; // When true, exactly one valve is open at a time. Value 1 is open by default.
-															 // When false, every value openeing and closing is explicitly controlled by user.
+								  // When false, every value openeing and closing is explicitly controlled by user.
 
 const bool TRIGGER_WHEN_OPEN = true; // Outputs a TTL pulse on BNC2 every time a valve is open (besides valve 1).
-																	// Will only work if BNC2_OUTPUT and ONE_VALVE_OPEN are also true.
+									 // Will only work if BNC2_OUTPUT and ONE_VALVE_OPEN are also true.
 
 const bool DISPLAY_VALVE_STATUS = true; // Write all valve openings/closing to USB
 
 const bool VERBOSE_OUTPUT = true;   // if true:  send user readable output over USB                   (e.g., "Valve 3 CLOSED")
-																	// if false: send coded output, e.g., for Matlab to interpret     (e.g., "C 3" )
+									// if false: send coded output, e.g., for Matlab to interpret     (e.g., "C 3" )
 
 const int NUM_VALVES = 32; // actual number of valves wired up
 
@@ -134,9 +134,7 @@ void loop() {
 		updateProgram();
 	}
 
-	if (millis() % 500) {
-		updateValves();
-	}
+	updateValves();
 }
 
 void startProgram() {
