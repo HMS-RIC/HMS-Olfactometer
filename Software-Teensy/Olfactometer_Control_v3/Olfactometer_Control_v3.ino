@@ -82,6 +82,14 @@ void setup() {
 		digitalWrite(V1, HIGH);
 		valve_status_list[0] = VALVE_OPEN_2;
 	}
+	// set PWM frequency
+	// (many pins share the same clock, so we only
+	//  need to set for pins 2,3,5,29 on Teensy3.5.)
+	// (Ref: https://www.pjrc.com/teensy/td_pulse.html)
+	analogWriteFrequency(2, 234375);
+	analogWriteFrequency(3, 234375);
+	analogWriteFrequency(5, 234375);
+	analogWriteFrequency(29, 234375);
 
 	// Set up pins for BNC input/output
 	if (BNC1_OUTPUT) {
