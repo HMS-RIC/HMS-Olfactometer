@@ -131,8 +131,10 @@ void CloseValve(int valveNum) {
 	}
 }
 
+static elapsedMillis previousUpdateInterval = 0;
 void updateValves() {
-	if ((millis() % 500) == 0) {
+	if (previousUpdateInterval > 500) {
+		previousUpdateInterval = 0;
 		for (int valve = 0; valve < NUM_VALVES; valve++) {
 			// test for VALVE_CLOSED first, since it's most likely
 			if (valve_status_list[valve] > VALVE_CLOSED) {
