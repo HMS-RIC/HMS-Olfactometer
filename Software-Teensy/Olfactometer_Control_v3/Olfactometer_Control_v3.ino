@@ -48,14 +48,6 @@ uint32_t duration_ms_list [MAX_PROG_LEN]; // duration in ms
 #define CMD_OPEN  (1)
 #define CMD_CLOSE (2)
 
-// For valve PWM
-uint8_t valve_status_list[MAX_NUM_VALVES];
-#define VALVE_CLOSED (0)
-#define VALVE_NO_PWM (1)
-#define VALVE_PWM    (2)
-#define VALVE_OPEN_1 (3)
-#define VALVE_OPEN_2 (4)
-
 
 // =================================
 
@@ -68,28 +60,8 @@ void DEBUG(String message) {
 // the setup function runs once when you press reset or power the board
 void setup() {
 
-	// Set up pins for valve control
-	for (int i=0; i<MAX_NUM_VALVES; i++) {
-		pinMode(all_valves[i], OUTPUT);
-		digitalWrite(all_valves[i], LOW);
-		valve_status_list[i] = VALVE_CLOSED;
-	}
-	pinMode(VAux1_pin, OUTPUT);
-	digitalWrite(VAux1_pin, LOW);
-	pinMode(VAux2_pin, OUTPUT);
-	digitalWrite(VAux2_pin, LOW);
-	if (ONE_VALVE_OPEN) {
-		digitalWrite(V1, HIGH);
-		valve_status_list[0] = VALVE_OPEN_2;
-	}
-	// set PWM frequency
-	// (many pins share the same clock, so we only
-	//  need to set for pins 2,3,5,29 on Teensy3.5.)
-	// (Ref: https://www.pjrc.com/teensy/td_pulse.html)
-	analogWriteFrequency(2, 234375);
-	analogWriteFrequency(3, 234375);
-	analogWriteFrequency(5, 234375);
-	analogWriteFrequency(29, 234375);
+	// initialize valves
+	setupValves();
 
 	// Set up pins for BNC input/output
 	if (BNC1_OUTPUT) {
