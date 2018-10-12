@@ -6142,7 +6142,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="SPICEPREFIX" value="C" x="50.8" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="46.99" y="3.175" size="1.016" layer="27" ratio="15" rot="R90"/>
 </element>
-<element name="U$5" library="ofer-eagle-lib" package="RIC_LOGO_BIG" value="" x="265.43" y="25.4"/>
+<element name="U$5" library="ofer-eagle-lib" package="RIC_LOGO_BIG" value="" x="200.66" y="8.89"/>
 </elements>
 <signals>
 <signal name="GND">
