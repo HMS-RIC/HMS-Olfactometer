@@ -83,7 +83,7 @@ void setup() {
 	// Broadcast version number
 	delay(1000);
 	Serial.println("HMS_Olfactometer_Controller");
-	Serial.println("Version 3.0");
+	Serial.println("Version 3.1");
 	Serial.println("");
 
 	// if communicating w/Matlab

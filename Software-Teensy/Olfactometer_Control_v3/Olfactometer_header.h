@@ -3,13 +3,13 @@
 
 // =================================
 // Pin Assignments
-const uint8_t RTS_pin = 38;	// NOTE: This is a hack to fix lack of RTS pin on PCB v2.0.
-						//		To be fixed in PCB v2.1
+const uint8_t RTS_pin = 28;
+
 const uint8_t BNC1_pin = 18;
 const uint8_t BNC2_pin = 19;
 
-const uint8_t VAux1_pin = 36;
-const uint8_t VAux2_pin = 37;
+const uint8_t VAux1_pin = 37;
+const uint8_t VAux2_pin = 38;
 
 const uint8_t V1 = 2;
 const uint8_t V2 = 3;
@@ -36,35 +36,35 @@ const uint8_t V21 = 24;
 const uint8_t V22 = 25;
 const uint8_t V23 = 26;
 const uint8_t V24 = 27;
-const uint8_t V25 = 28;
-const uint8_t V26 = 29;
-const uint8_t V27 = 30;
-const uint8_t V28 = 31;
-const uint8_t V29 = 32;
-const uint8_t V30 = 33;
-const uint8_t V31 = 34;
-const uint8_t V32 = 35;
+const uint8_t V25 = 29;
+const uint8_t V26 = 30;
+const uint8_t V27 = 31;
+const uint8_t V28 = 32;
+const uint8_t V29 = 33;
+const uint8_t V30 = 34;
+const uint8_t V31 = 35;
+const uint8_t V32 = 36;
 
-const uint8_t V33 = 38;
-const uint8_t V34 = 39;
-const uint8_t V35 = 40;
-const uint8_t V36 = 41;
-const uint8_t V37 = 42;
-const uint8_t V38 = 43;
-const uint8_t V39 = 44;
-const uint8_t V40 = 45;
-const uint8_t V41 = 46;
-const uint8_t V42 = 47;
-const uint8_t V43 = 48;
-const uint8_t V44 = 49;
-const uint8_t V45 = 50;
-const uint8_t V46 = 51;
-const uint8_t V47 = 52;
-const uint8_t V48 = 53;
+const uint8_t V33 = 39;
+const uint8_t V34 = 40;
+const uint8_t V35 = 41;
+const uint8_t V36 = 42;
+const uint8_t V37 = 43;
+const uint8_t V38 = 44;
+const uint8_t V39 = 45;
+const uint8_t V40 = 46;
+const uint8_t V41 = 47;
+const uint8_t V42 = 48;
+const uint8_t V43 = 49;
+const uint8_t V44 = 50;
+const uint8_t V45 = 51;
+const uint8_t V46 = 52;
+const uint8_t V47 = 53;
+const uint8_t V48 = 54;
 
-const uint8_t V49 = 54;
-const uint8_t V50 = 55;
-const uint8_t V51 = 56;
+const uint8_t V49 = 55;
+const uint8_t V50 = 56;
+const uint8_t V51 = 57;
 
 
 const uint8_t MAX_NUM_VALVES = 51;
