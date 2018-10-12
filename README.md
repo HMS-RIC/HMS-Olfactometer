@@ -20,6 +20,7 @@ Unfortunately, because of this v2.0 and v2.1 of the PCB require slightly differe
 Valves that are open for long durations (>> 1 second) will tend to heat up and valves open for several minutes are at risk of over-heating. The Teensy software can mitigate this for some valves by reducing the power to the valves within a few milliseconds after opening them (using full power for the opening). This is only possible on the following valves:
 
 `V1–V9, V13, V17–V20, V26–27, V32-33` (for PCB v2.0)
+
 `V1–V9, V13, V17–V20, V25–26, V31-32` (for PCB v2.1)
 
 **Please use these valves for `Blank` odors and long-duration stimuli.**
