@@ -8985,7 +8985,7 @@ Source: http://www.vishay.com/docs/10129/hpc0201a.pdf</description>
 <part name="P+12" library="supply1" deviceset="+15V" device=""/>
 <part name="P-2" library="supply1" deviceset="-15V" device=""/>
 <part name="P-3" library="supply1" deviceset="-15V" device=""/>
-<part name="U$8" library="SparkFun-Connectors" deviceset="M24" device=""/>
+<part name="U$8" library="SparkFun-Connectors" deviceset="M24" device="" value=""/>
 <part name="R_A" library="SparkFun-Resistors" deviceset="RESISTOR" device="PTH-1/2W" value="680"/>
 <part name="R_T" library="SparkFun-Resistors" deviceset="RESISTOR" device="PTH-1/2W" value="120"/>
 <part name="R_B" library="SparkFun-Resistors" deviceset="RESISTOR" device="PTH-1/2W" value="680"/>
@@ -8993,7 +8993,7 @@ Source: http://www.vishay.com/docs/10129/hpc0201a.pdf</description>
 <part name="P+14" library="supply1" deviceset="+12V" device=""/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="10UF-6.3V-20%(1206)" device="" value="22uF"/>
 <part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="10uF"/>
-<part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="1206"/>
+<part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="1uF"/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND" library="SparkFun-Connectors" deviceset="M01" device="PTH" value="M01PTH"/>
 <part name="5V" library="SparkFun-Connectors" deviceset="M01" device="PTH" value="M01PTH"/>
@@ -9016,28 +9016,28 @@ Source: http://www.vishay.com/docs/10129/hpc0201a.pdf</description>
 <part name="IC3" library="uln-udn" deviceset="ULN2803A" device="" value="ULQ2803A"/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="P+9" library="supply1" deviceset="+12V" device=""/>
-<part name="U$7" library="SparkFun-Connectors" deviceset="M24" device=""/>
+<part name="U$7" library="SparkFun-Connectors" deviceset="M24" device="" value=""/>
 <part name="P+10" library="supply1" deviceset="+12V" device=""/>
 <part name="IC4" library="uln-udn" deviceset="ULN2803A" device="" value="ULQ2803A"/>
 <part name="GND13" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="P+15" library="supply1" deviceset="+12V" device=""/>
-<part name="U$9" library="SparkFun-Connectors" deviceset="M24" device=""/>
+<part name="U$9" library="SparkFun-Connectors" deviceset="M24" device="" value=""/>
 <part name="P+16" library="supply1" deviceset="+12V" device=""/>
 <part name="FRAME2" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="IC5" library="uln-udn" deviceset="ULN2803A" device="" value="ULQ2803A"/>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="P+17" library="supply1" deviceset="+12V" device=""/>
-<part name="U$14" library="SparkFun-Connectors" deviceset="M24" device=""/>
+<part name="U$14" library="SparkFun-Connectors" deviceset="M24" device="" value=""/>
 <part name="P+18" library="supply1" deviceset="+12V" device=""/>
 <part name="IC6" library="uln-udn" deviceset="ULN2803A" device="" value="ULQ2803A"/>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="P+19" library="supply1" deviceset="+12V" device=""/>
-<part name="U$15" library="SparkFun-Connectors" deviceset="M24" device=""/>
+<part name="U$15" library="SparkFun-Connectors" deviceset="M24" device="" value=""/>
 <part name="P+20" library="supply1" deviceset="+12V" device=""/>
 <part name="IC8" library="uln-udn" deviceset="ULN2803A" device="" value="ULQ2803A"/>
 <part name="GND19" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="P+23" library="supply1" deviceset="+12V" device=""/>
-<part name="U$17" library="SparkFun-Connectors" deviceset="M24" device=""/>
+<part name="U$17" library="SparkFun-Connectors" deviceset="M24" device="" value=""/>
 <part name="P+24" library="supply1" deviceset="+12V" device=""/>
 <part name="IC10" library="uln-udn" deviceset="ULN2803A" device="" value="ULQ2803A3"/>
 <part name="GND21" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
