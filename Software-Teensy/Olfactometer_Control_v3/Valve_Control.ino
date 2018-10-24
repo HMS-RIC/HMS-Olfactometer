@@ -61,6 +61,10 @@ void OpenValve(int valveNum) {
 	// close the currenly open valve, if necessary
 	if (ONE_VALVE_OPEN) {
 		digitalWrite(all_valves[current_valve-1], LOW);
+		// For Teensys, if a pin is in PWM mode (analogWrite), it will not
+		// accept digitalWrite commands. The following code gets around this
+		// issue. More info here:
+		// https://forum.pjrc.com/threads/9-digitalWrite-doesn-t-work-after-analogWrite-on-the-same-pin
 		if (valve_status_list[current_valve-1] == VALVE_PWM) {
 			analogWrite(all_valves[current_valve-1], 0);
 		}
@@ -105,6 +109,8 @@ void CloseValve(int valveNum) {
 	// close valve
 	digitalWrite(all_valves[valveNum-1], LOW);
 	if (valve_status_list[valveNum-1] == VALVE_PWM) {
+		// This is the same fix for Teensy analog/digitalWrite behavior
+		// explained above.
 		analogWrite(all_valves[valveNum-1], 0);
 	}
 	valve_status_list[valveNum-1] = VALVE_CLOSED;
