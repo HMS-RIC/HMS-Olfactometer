@@ -65,7 +65,26 @@ float setMFCFlow(const char* address, float flowRate) {
 float getMFCFlowRate(const char* address) {
 	String command = "!";
 	command += address;
-	command += ",F";
+	command += ",F"; //[F]low reading
+	command.toCharArray(MFCBuffer,1024);
+	MFC_Println(MFCBuffer);
+	MFC_Read();
+
+	String response = MFCBuffer;
+	if (!response.startsWith(String("!"+ String(address)))) {
+		USB_Error_BadMFCResponse();
+		return -1.0;
+	}
+
+	float val = response.substring(4).toFloat();
+	return val;
+}
+
+float getMFCValvePosition(const char* address) {
+	String command = "!";
+	command += address;
+	command += ",MR"; // [M]emory [R]ead
+	command += ",41"; // 41 == Valve opening in % of full scale
 	command.toCharArray(MFCBuffer,1024);
 	MFC_Println(MFCBuffer);
 	MFC_Read();
