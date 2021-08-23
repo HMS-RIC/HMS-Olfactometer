@@ -12,6 +12,7 @@ const bool ONE_VALVE_OPEN = true; // When true, exactly one valve is open at a t
 
 const bool TRIGGER_WHEN_OPEN = true; // Outputs a TTL pulse on BNC2 every time a valve is open (besides valve 1).
 									 // Will only work if BNC2_OUTPUT and ONE_VALVE_OPEN are also true.
+									 // This disables the control of BNC2 over USB commands.
 
 const bool DISPLAY_VALVE_STATUS = true; // Write all valve openings/closing to USB
 
@@ -41,6 +42,8 @@ uint32_t duration_ms_list [MAX_PROG_LEN]; // duration in ms
 #define CMD_NOOP  (0)
 #define CMD_OPEN  (1)
 #define CMD_CLOSE (2)
+#define CMD_BNC_ON (3)
+#define CMD_BNC_OFF (4)
 
 
 // =================================
@@ -83,7 +86,7 @@ void setup() {
 	// Broadcast version number
 	delay(1000);
 	Serial.println("HMS_Olfactometer_Controller");
-	Serial.println("Version 3.1");
+	Serial.println("Version 3.2");
 	Serial.println("");
 
 	// if communicating w/Matlab
@@ -151,9 +154,23 @@ void runCommand() {
 	currentCmdDuration_us = duration_ms_list[prog_index]*1000;
 	if (cmd_list[prog_index] == CMD_OPEN) {
 		OpenValve(valve_list[prog_index]);
-	}
-	else if (cmd_list[prog_index] == CMD_CLOSE) {
+
+	} else if (cmd_list[prog_index] == CMD_CLOSE) {
 		CloseValve(valve_list[prog_index]);
+
+	} else if (cmd_list[prog_index] == CMD_BNC_ON) {
+		if ((valve_list[prog_index] == 1) && BNC1_OUTPUT) {
+			digitalWrite(BNC1_pin, HIGH);
+		} else ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
+			digitalWrite(BNC2_pin, HIGH);
+		}
+
+	} else if (cmd_list[prog_index] == CMD_BNC_OFF) {
+		if ((valve_list[prog_index] == 1) && BNC1_OUTPUT) {
+			digitalWrite(BNC1_pin, LOW);
+		} else ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
+			digitalWrite(BNC2_pin, LOW);
+		}
 	}
 	prog_index += 1;
 }
@@ -295,6 +312,38 @@ void interpretUSBMessage(String message) {
 			}
 			break;
 
+		// B: initiate [B]NC pulse
+		case 'B':
+		case 'b':
+			if (!isRunning) {
+				// check we don't exceed max commands
+				if (prog_len == MAX_PROG_LEN) {
+					USB_Error_MaxProgLen();
+					break;
+				}
+				cmd_list[prog_len] = CMD_BNC_ON;
+				valve_list[prog_len] = arg1;
+				duration_ms_list[prog_len] = arg2;
+				prog_len += 1;
+			}
+			break;
+
+		// E: [E]nd BNC pulse
+		case 'E':
+		case 'e':
+			if (!isRunning) {
+				// check we don't exceed max commands
+				if (prog_len == MAX_PROG_LEN) {
+					USB_Error_MaxProgLen();
+					break;
+				}
+				cmd_list[prog_len] = CMD_BNC_OFF;
+				valve_list[prog_len] = arg1;
+				duration_ms_list[prog_len] = arg2;
+				prog_len += 1;
+			}
+			break;
+
 
 		// D: changes o[D]or stream flow rate (in mLPM)
 		case 'D':
@@ -326,3 +375,6 @@ void interpretUSBMessage(String message) {
 			Serial.println("#"); // "#" means error
 	}
 }
+
+// Commands in use: A, B, C, D, E, O, P, R, S, X
+
