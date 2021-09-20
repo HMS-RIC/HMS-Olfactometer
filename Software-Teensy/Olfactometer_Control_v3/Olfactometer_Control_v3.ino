@@ -1,4 +1,9 @@
 
+// NOTE: The Teensy pin assignments differ between PCB versions 2.0 and 2.1
+	// For PCB v2.1, comment out the following #define line
+	// For PCB v2.0, leave the #define uncommented
+// #define OLD_PCB_V2_0 // when uncommented, there should be no spaces before the "#define"
+
 #include "Olfactometer_header.h"
 
 // User-modifiable global settings:
@@ -87,6 +92,11 @@ void setup() {
 	delay(1000);
 	Serial.println("HMS_Olfactometer_Controller");
 	Serial.println("Version 3.2");
+#ifndef OLD_PCB_V2_0
+	Serial.println("Compiled for PCB v2.1");
+#else
+	Serial.println("Compiled for PCB v2.0");
+#endif
 	Serial.println("");
 
 	// if communicating w/Matlab
