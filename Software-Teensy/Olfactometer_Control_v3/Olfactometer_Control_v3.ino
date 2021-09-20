@@ -171,14 +171,14 @@ void runCommand() {
 	} else if (cmd_list[prog_index] == CMD_BNC_ON) {
 		if ((valve_list[prog_index] == 1) && BNC1_OUTPUT) {
 			digitalWrite(BNC1_pin, HIGH);
-		} else ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
+		} else if ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
 			digitalWrite(BNC2_pin, HIGH);
 		}
 
 	} else if (cmd_list[prog_index] == CMD_BNC_OFF) {
 		if ((valve_list[prog_index] == 1) && BNC1_OUTPUT) {
 			digitalWrite(BNC1_pin, LOW);
-		} else ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
+		} else if ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
 			digitalWrite(BNC2_pin, LOW);
 		}
 	}
