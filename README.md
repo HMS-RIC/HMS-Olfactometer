@@ -27,17 +27,19 @@ The first few lines of `Olfactometer_Control_v3.ino` have a handful of user-sett
 | Command | Description |
 |---|---|
 | `A` | [A]bort program |
-| `X` | erase program |
+| `X` | Erase program |
 | `P` | [P]rint program |
 | `T` | [T]rigger program |
-| `O <valveNum> <delay-ms>` | add valve [O]pen command |
-| `C <valveNum> <delay-ms>` | add valve [C]lose command |
-| `B <BNC-Num> <delay-ms>` | initiate [B]NC pulse |
-| `E <BNC-Num> <delay-ms>` | [E]nd BNC pulse |
-| `D` | changes o[D]or stream flow rate (in mLPM) |
-| `R` | changes ca[R]rier stream flow rate (in mLPM) |
+| *Add to program:* ||
+| `O <valveNum> <delay-ms>` | Add valve [O]pen command |
+| `C <valveNum> <delay-ms>` | Add valve [C]lose command |
+| `B <BNC-Num> <delay-ms>` | Add start [B]NC pulse command |
+| `E <BNC-Num> <delay-ms>` | Add [E]nd BNC pulse command |
+| *Adjust MFC flow rates:* ||
+| `D <flow-rate>` | Set o[D]or stream flow rate (in mLPM) |
+| `R <flow-rate>` | Set ca[R]rier stream flow rate (in mLPM) |
 
-#### Pre-programmed valve sequences
+#### Pre-programmed valve/BNC sequences
 To use the olfactometer, you must first program a sequence of valve (and BNC) actions using the `O`, `C`, `B`, and `E` commands. You can then trigger the execution of the program by either:
 - sending the `T` command, or
 - delivering a TTL pulse on BNC1 (assuming BNC1 is in input mode)
