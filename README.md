@@ -30,12 +30,12 @@ The first few lines of `Olfactometer_Control_v3.ino` have a handful of user-sett
 | `X` | Erase program |
 | `P` | [P]rint program |
 | `T` | [T]rigger program |
-| *Add to program:* ||
+| **Add to program:** ||
 | `O <valveNum> <delay-ms>` | Add valve [O]pen command |
 | `C <valveNum> <delay-ms>` | Add valve [C]lose command |
 | `B <BNC-Num> <delay-ms>` | Add start [B]NC pulse command |
 | `E <BNC-Num> <delay-ms>` | Add [E]nd BNC pulse command |
-| *Adjust MFC flow rates:* ||
+| **Adjust MFC flow rates:** ||
 | `D <flow-rate>` | Set o[D]or stream flow rate (in mLPM) |
 | `R <flow-rate>` | Set ca[R]rier stream flow rate (in mLPM) |
 
@@ -46,12 +46,10 @@ To use the olfactometer, you must first program a sequence of valve (and BNC) ac
 
 Note that the `<delay-ms>` value in the program commands determines the delay in milliseconds until the next comman is executed (i.e., not the valve open duration or the TTL pulse duration). So the following program would open valve 7 for 1 second and output a 1 second pulse on BNC2, with the pulse starting 100 ms after the valve opening:
 
-	```
 	O 7 100
 	B 2 900
 	C 7 100
 	E 2 0
-	```
 
 
 ### Long duration valve openings
