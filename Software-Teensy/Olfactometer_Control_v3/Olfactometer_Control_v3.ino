@@ -10,6 +10,8 @@
 // =================================
 
 const bool BNC1_OUTPUT = false; // set to true/false for BNC1 to be output/input
+								// Must be false (input) when used to trigger a pre-programmed valve sequence.
+
 const bool BNC2_OUTPUT = true; // set to true/false for BNC2 to be output/input
 
 const bool ONE_VALVE_OPEN = true; // When true, exactly one valve is open at a time. Value 1 is open by default.
@@ -263,7 +265,7 @@ void interpretUSBMessage(String message) {
 
 	switch (command) {
 
-		// A: abort program
+		// A: [A]bort program
 		case 'A':
 		case 'a':
 			if (isRunning) {
@@ -284,10 +286,18 @@ void interpretUSBMessage(String message) {
 			}
 			break;
 
-		// P: print program
+		// P: [P]rint program
 		case 'P':
 		case 'p':
 			USB_PrintProg();
+			break;
+
+		// T: [T]rigger program
+		case 'T':
+		case 't':
+			if (!isRunning) {
+				startProgram();     // trigger program
+			}
 			break;
 
 		// O: add valve [O]pen command
@@ -386,5 +396,5 @@ void interpretUSBMessage(String message) {
 	}
 }
 
-// Commands in use: A, B, C, D, E, O, P, R, S, X
+// Commands in use: A, B, C, D, E, O, P, R, S, T, X
 
