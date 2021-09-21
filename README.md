@@ -44,7 +44,7 @@ To use the olfactometer, you must first program a sequence of valve (and BNC) ac
 - sending the `T` command, or
 - delivering a TTL pulse on BNC1 (assuming BNC1 is in input mode)
 
-Note that the `<delay-ms>` value in the program commands determines the delay in milliseconds until the next comman is executed (i.e., not the valve open duration or the TTL pulse duration). So the following program would open valve 7 for 1 second and output a 1 second pulse on BNC2, with the pulse starting 100 ms after the valve opening:
+Note that the `<delay-ms>` value in the program commands determines the delay in milliseconds until the next command is executed (i.e., it doesn't explicitly specify the valve open duration or the TTL pulse duration). So the following program would open valve 7 for 1 second and output a 1 second pulse on BNC2, with the pulse starting 100 ms after the valve opening:
 
 	O 7 100
 	B 2 900
