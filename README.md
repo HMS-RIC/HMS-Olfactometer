@@ -30,7 +30,7 @@ The first few lines of `Olfactometer_Control_v3.ino` have a handful of user-sett
 | `X` | Erase program |
 | `P` | [P]rint program |
 | `T` | [T]rigger program |
-| **Add to program:** ||
+| **Append action to the program:** ||
 | `O <valveNum> <delay-ms>` | Add valve [O]pen command |
 | `C <valveNum> <delay-ms>` | Add valve [C]lose command |
 | `B <BNC-Num> <delay-ms>` | Add start [B]NC pulse command |
