@@ -22,6 +22,28 @@ void USB_ValveClosed(int valve) {
 	}
 }
 
+void USB_BNCOn(int channelNum) {
+	if (VERBOSE_OUTPUT) {
+		Serial.print(F("BNC "));
+		Serial.print(channelNum);
+		Serial.println(F(" pulse START."));
+	} else {
+		Serial.print(F("B "));
+		Serial.println(channelNum);
+	}
+}
+
+void USB_BNCOff(int channelNum) {
+	if (VERBOSE_OUTPUT) {
+		Serial.print(F("BNC "));
+		Serial.print(channelNum);
+		Serial.println(F(" pulse END."));
+	} else {
+		Serial.print(F("E "));
+		Serial.println(channelNum);
+	}
+}
+
 void USB_CarrierFlowRate(float flow_lpm) {
 	if (VERBOSE_OUTPUT) {
 		Serial.print(F("Carrier flow rate "));
@@ -54,13 +76,21 @@ void USB_PrintProg() {
 			for (int i=0; i<prog_len; i++) {
 				progLine = String(i+1) + ": \t"; // use 1-based line numbers
 				if (cmd_list[i] == CMD_OPEN) {
-					progLine += "OPEN  \t";
+					progLine += "OPEN      \t";
 				} else if (cmd_list[i] == CMD_CLOSE) {
-					progLine += "CLOSE \t";
+					progLine += "CLOSE     \t";
+				} else if (cmd_list[i] == CMD_BNC_ON) {
+					progLine += "PULSE-ON  \t";
+				} else if (cmd_list[i] == CMD_BNC_OFF) {
+					progLine += "PULSE-OFF \t";
 				} else {
-					progLine += "????  \t";
+					progLine += "????      \t";
 				}
-				progLine += "V";
+				if ((cmd_list[i] == CMD_BNC_ON) || (cmd_list[i] == CMD_BNC_OFF)) {
+					progLine += "B";
+				} else {
+					progLine += "V";
+				}
 				progLine += valve_list[i];
 				progLine += " \t";
 				progLine += duration_ms_list[i];

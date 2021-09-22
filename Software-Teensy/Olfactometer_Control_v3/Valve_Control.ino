@@ -67,9 +67,7 @@ void OpenValve(int valveNum) {
 		valve_status_list[current_valve-1] = VALVE_CLOSED;
 
 		if (DISPLAY_VALVE_STATUS && (current_valve>1)) {
-			Serial.print("Valve ");
-			Serial.print(current_valve);
-			Serial.println(" CLOSED.");
+			USB_ValveClosed(current_valve);
 		}
 		if (TRIGGER_WHEN_OPEN && BNC2_OUTPUT) {
 			digitalWrite(BNC2_pin, HIGH);
@@ -79,9 +77,7 @@ void OpenValve(int valveNum) {
 		current_valve = valveNum;
 	}
 	if (DISPLAY_VALVE_STATUS) {
-		Serial.print("Valve ");
-		Serial.print(valveNum);
-		Serial.println(" OPEN.");
+		USB_ValveOpen(valveNum);
 	}
 }
 
@@ -125,9 +121,7 @@ void CloseValve(int valveNum) {
 		}
 	}
 	if (DISPLAY_VALVE_STATUS) {
-		Serial.print("Valve ");
-		Serial.print(valveNum);
-		Serial.println(" CLOSED.");
+		USB_ValveClosed(valveNum);
 	}
 }
 

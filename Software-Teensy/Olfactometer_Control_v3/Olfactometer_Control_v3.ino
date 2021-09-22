@@ -22,6 +22,7 @@ const bool TRIGGER_WHEN_OPEN = true; // Outputs a TTL pulse on BNC2 every time a
 									 // This disables the control of BNC2 over USB commands.
 
 const bool DISPLAY_VALVE_STATUS = true; // Write all valve openings/closing to USB
+const bool DISPLAY_BNC_STATUS = true; // Write all BNC pulses to USB
 
 const bool VERBOSE_OUTPUT = true;   // if true:  send user readable output over USB                   (e.g., "Valve 3 CLOSED")
 									// if false: send coded output, e.g., for Matlab to interpret     (e.g., "C 3" )
@@ -171,18 +172,10 @@ void runCommand() {
 		CloseValve(valve_list[prog_index]);
 
 	} else if (cmd_list[prog_index] == CMD_BNC_ON) {
-		if ((valve_list[prog_index] == 1) && BNC1_OUTPUT) {
-			digitalWrite(BNC1_pin, HIGH);
-		} else if ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
-			digitalWrite(BNC2_pin, HIGH);
-		}
+		BNC_Pulse_On(valve_list[prog_index]);
 
 	} else if (cmd_list[prog_index] == CMD_BNC_OFF) {
-		if ((valve_list[prog_index] == 1) && BNC1_OUTPUT) {
-			digitalWrite(BNC1_pin, LOW);
-		} else if ((valve_list[prog_index] == 2) && BNC2_OUTPUT && (!TRIGGER_WHEN_OPEN)) {
-			digitalWrite(BNC2_pin, LOW);
-		}
+		BNC_Pulse_Off(valve_list[prog_index]);
 	}
 	prog_index += 1;
 }
