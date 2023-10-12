@@ -1,3 +1,6 @@
 
 # Excel temporary files
 ~$*.xls*
+
+# annoying OSX files
+.DS_Store
