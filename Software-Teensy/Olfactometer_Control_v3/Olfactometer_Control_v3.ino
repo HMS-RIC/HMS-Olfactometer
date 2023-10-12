@@ -103,7 +103,7 @@ void setup() {
 	Serial.println("");
 
 	// if communicating w/Matlab
-	if (~VERBOSE_OUTPUT) {
+	if (!VERBOSE_OUTPUT) {
 		delay(100);
 		Serial.println('S');
 	}

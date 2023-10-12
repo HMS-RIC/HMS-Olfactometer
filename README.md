@@ -39,6 +39,8 @@ The first few lines of `Olfactometer_Control_v3.ino` have a handful of user-sett
 | `D <flow-rate>` | Set o[D]or stream flow rate (in mLPM) |
 | `R <flow-rate>` | Set ca[R]rier stream flow rate (in mLPM) |
 
+Note: The Teensy responds with `#` to indicate a bad command.
+
 #### Pre-programmed valve/BNC sequences
 To use the olfactometer, you must first program a sequence of valve (and BNC) actions using the `O`, `C`, `B`, and `E` commands. You can then trigger the execution of the program by either:
 - sending the `T` command, or
