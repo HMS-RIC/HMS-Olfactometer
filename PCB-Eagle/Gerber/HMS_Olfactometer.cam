@@ -227,7 +227,7 @@
             "version": "RS274X"
         },
         {
-            "filename_prefix": "CAMOutputs/DrillFiles",
+            "filename_prefix": "HMS_Olfactometer_v2.2_",
             "format_specifier": {
                 "decimal": 3,
                 "integer": 3
@@ -261,7 +261,7 @@
             ]
         }
     ],
-    "timestamp": "2023-10-13T10:57:34",
+    "timestamp": "2023-10-20T16:49:08",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "9.2.0"
