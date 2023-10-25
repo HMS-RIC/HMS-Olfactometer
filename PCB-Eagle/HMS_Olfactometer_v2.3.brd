@@ -218,7 +218,7 @@
 <wire x1="166.37" y1="127" x2="166.37" y2="129.54" width="0.3048" layer="21"/>
 <wire x1="168.91" y1="127" x2="168.91" y2="129.54" width="0.3048" layer="21"/>
 <text x="184.15" y="30.48" size="5.08" layer="25" font="vector" ratio="15">ODB</text>
-<text x="184.15" y="19.05" size="2.54" layer="25" font="vector" ratio="10">The Olfactory Delivery Board v2.2
+<text x="184.15" y="19.05" size="2.54" layer="25" font="vector" ratio="10">The Olfactory Delivery Board v2.3
 October 2023,  OM
 HMS Research Instrumentation Core</text>
 <text x="9.525" y="59.69" size="2.54" layer="21" font="vector" ratio="12" rot="SR270">A</text>
