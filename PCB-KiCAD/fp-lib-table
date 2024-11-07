@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "RIC Logo Footprints")(type "KiCad")(uri "${KIPRJMOD}/Local Libs/RIC Logo Footprints.pretty")(options "")(descr ""))
+)

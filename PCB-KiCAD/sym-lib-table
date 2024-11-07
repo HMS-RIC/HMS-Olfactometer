@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "RIC_Logo")(type "KiCad")(uri "${KIPRJMOD}/Local Libs/RIC_Logo.kicad_sym")(options "")(descr ""))
+)

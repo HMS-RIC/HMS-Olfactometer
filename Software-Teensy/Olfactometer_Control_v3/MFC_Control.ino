@@ -99,6 +99,81 @@ float getMFCValvePosition(const char* address) {
 	return val;
 }
 
+
+void setValveOpen(const char* address) {
+	String command = "!";
+	command += address;
+	command += ",V,O";
+	command.toCharArray(MFCBuffer,1024);
+	MFC_Println(MFCBuffer);
+	MFC_Read();
+
+	String response = MFCBuffer;
+	if (!response.startsWith(String("!"+ String(address)+",VO"))) {
+		USB_Error_BadMFCResponse();
+	}
+}
+void setValveClosed(const char* address) {
+	String command = "!";
+	command += address;
+	command += ",V,C";
+	command.toCharArray(MFCBuffer,1024);
+	MFC_Println(MFCBuffer);
+	MFC_Read();
+
+	String response = MFCBuffer;
+	if (!response.startsWith(String("!"+ String(address)+",VC"))) {
+		USB_Error_BadMFCResponse();
+	}
+}
+void setValveAuto(const char* address) {
+	String command = "!";
+	command += address;
+	command += ",V,A";
+	command.toCharArray(MFCBuffer,1024);
+	MFC_Println(MFCBuffer);
+	MFC_Read();
+
+	String response = MFCBuffer;
+	if (!response.startsWith(String("!"+ String(address)+",VA"))) {
+		USB_Error_BadMFCResponse();
+	}
+}
+
+
+void autoTuneMFC(const char* address, float flowRate) {
+	String command = "!";
+	command += address;
+	command += ",AT,";
+	command += flowRate;
+	command.toCharArray(MFCBuffer,1024);
+	MFC_Println(MFCBuffer);
+	MFC_Read();
+
+	String response = MFCBuffer;
+	if (!response.startsWith(String("!"+ String(address)+",AT"))) {
+		USB_Error_BadMFCResponse();
+		return -1;
+	}
+}
+
+void checkAutoTuneStatus(const char* address) {
+	String command = "!";
+	command += address;
+	command += ",S";
+	command.toCharArray(MFCBuffer,1024);
+	MFC_Println(MFCBuffer);
+	MFC_Read();
+
+	String response = MFCBuffer;
+	if (!response.startsWith(String("!"+ String(address)+",AT"))) {
+		USB_Error_BadMFCResponse();
+		return -1;
+	}
+	Serial.println(response.substring(3));
+}
+
+
 void getMFCModelNumber(const char* address) {
 	String command = "!";
 	command += address;
