@@ -51,7 +51,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -171,7 +177,11 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.254,
+        0.635
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -198,7 +208,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -581,27 +596,27 @@
     ],
     [
       "28e95730-bc0a-4e8d-908a-468cb9cc73a7",
-      "8x I2C Valve Module"
+      "8x Valve Module"
     ],
     [
       "925bc477-cdad-4ad0-850c-24d99e6871a3",
-      "8x I2C Valve Module1"
+      "8x Valve Module1"
     ],
     [
       "3fd6c6a5-afe0-41c8-91d2-4f2754fe6312",
-      "8x I2C Valve Module2"
+      "8x Valve Module2"
     ],
     [
       "e2dc6b45-b85e-4cbf-a6e5-be7535d4542e",
-      "8x I2C Valve Module3"
+      "8x Valve Module3"
     ],
     [
       "69fb9547-4524-4e7d-9a6b-bf49a23c5bde",
-      "8x I2C Valve Module4"
+      "8x Valve Module4"
     ],
     [
       "999484a5-c927-4db7-9bcb-68767aa4e697",
-      "8x I2C Valve Module5"
+      "8x Valve Module5"
     ],
     [
       "189826bc-e86f-4673-87b3-0d281cb23bde",

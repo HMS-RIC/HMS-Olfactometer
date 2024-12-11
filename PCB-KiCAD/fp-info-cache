@@ -1,4 +1,4 @@
-25343176459345555
+25366800086522679
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -89635,16 +89635,16 @@ SPARKFUN FLAME LOGO - 0.4" HEIGHT - SILKSCREEN
 0
 0
 SparkFun-Aesthetics
-SFE_LOGO_FLAME_.05
-SPARKFUN FLAME LOGO - 0.05" HEIGHT - SILKSCREEN
-SPARKFUN FLAME LOGO - 0.05" HEIGHT - SILKSCREEN
+SFE_LOGO_FLAME_.5
+SPARKFUN FLAME LOGO - 0.5" HEIGHT - SILKSCREEN
+SPARKFUN FLAME LOGO - 0.5" HEIGHT - SILKSCREEN
 0
 0
 0
 SparkFun-Aesthetics
-SFE_LOGO_FLAME_.5
-SPARKFUN FLAME LOGO - 0.5" HEIGHT - SILKSCREEN
-SPARKFUN FLAME LOGO - 0.5" HEIGHT - SILKSCREEN
+SFE_LOGO_FLAME_.05
+SPARKFUN FLAME LOGO - 0.05" HEIGHT - SILKSCREEN
+SPARKFUN FLAME LOGO - 0.05" HEIGHT - SILKSCREEN
 0
 0
 0
@@ -103151,3 +103151,101 @@ Varistor VF
 0
 2
 2
+teensy
+Teensy1.0
+11
+
+0
+27
+27
+teensy
+Teensy1.0++
+20
+
+0
+51
+51
+teensy
+Teensy2.0
+11
+
+0
+31
+31
+teensy
+Teensy2.0++
+20
+
+0
+52
+52
+teensy
+Teensy30_31_32_All_Pins
+Teensy 3.0/3.1/3.2 All Pins
+
+0
+54
+54
+teensy
+Teensy30_31_32_LC
+
+
+0
+39
+38
+teensy
+Teensy35_36
+
+
+0
+62
+62
+teensy
+Teensy35_36_All_Pins
+
+
+0
+88
+88
+teensy
+Teensy40
+
+
+0
+44
+44
+teensy
+Teensy40_SMT
+
+
+0
+54
+54
+teensy
+Teensy40_noInternalPins
+
+
+0
+28
+28
+teensy
+Teensy41
+
+
+0
+67
+67
+teensy
+Teensy41_noInternalPins
+
+
+0
+48
+48
+teensy
+Teensy_LC
+
+
+0
+39
+39
