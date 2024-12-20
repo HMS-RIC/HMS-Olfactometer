@@ -1469,10 +1469,6 @@
 		(at 40.64 50.8)
 		(uuid "38845381-a358-4d33-b22f-bffed40a4b46")
 	)
-	(no_connect
-		(at 40.64 40.64)
-		(uuid "630e207c-233d-4fb2-90bb-59ce8ca7fa90")
-	)
 	(wire
 		(pts
 			(xy 111.76 55.88) (xy 101.6 55.88)
@@ -1632,6 +1628,16 @@
 			(type default)
 		)
 		(uuid "588053c0-f55d-42d7-97bd-336c729ccc00")
+	)
+	(wire
+		(pts
+			(xy 38.1 40.64) (xy 40.64 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ab37482-f14d-4d9d-9e76-197c63f790c0")
 	)
 	(wire
 		(pts
@@ -2046,6 +2052,28 @@
 		(uuid "063b777d-2e2f-4924-a360-544ff53cebaf")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 28.8253 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RESET"
+		(shape input)
+		(at 38.1 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "41a1d915-9d81-4468-a7c9-900c7c694f44")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.3697 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2715,6 +2743,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+12V")
+		(at 104.14 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7581aeec-4992-4876-82d8-d07889dced5f")
+		(property "Reference" "#PWR03"
+			(at 104.14 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 104.14 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 104.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 104.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 104.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "249bc11f-cb59-4d03-9635-4d2b8781fa53")
+		)
+		(instances
+			(project "HMS Olfactometer"
+				(path "/d7d8f86e-c8d6-438e-95be-a4e29dfe527f/189826bc-e86f-4673-87b3-0d281cb23bde"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 53.34 33.02 0)
 		(unit 1)
@@ -2775,72 +2869,6 @@
 			(project "HMS Olfactometer"
 				(path "/d7d8f86e-c8d6-438e-95be-a4e29dfe527f/189826bc-e86f-4673-87b3-0d281cb23bde"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 104.14 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a56e234f-ca74-49c0-bc7f-2a9120962188")
-		(property "Reference" "#PWR03"
-			(at 104.14 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 104.14 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 104.14 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 104.14 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 104.14 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1809f8f8-c541-412e-9eb2-7c7e1883ccfd")
-		)
-		(instances
-			(project "HMS Olfactometer"
-				(path "/d7d8f86e-c8d6-438e-95be-a4e29dfe527f/189826bc-e86f-4673-87b3-0d281cb23bde"
-					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -3141,7 +3169,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCP23008-xP"
+		(property "Value" "MCP23008"
 			(at 55.5341 35.56 0)
 			(effects
 				(font

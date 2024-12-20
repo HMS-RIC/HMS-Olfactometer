@@ -96,9 +96,9 @@
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_edge_clearance": "ignore",
+        "silk_over_copper": "ignore",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
@@ -180,6 +180,7 @@
       "track_widths": [
         0.0,
         0.254,
+        0.381,
         0.635
       ],
       "tuning_pattern_settings": {
@@ -467,6 +468,23 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "High Current",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.635,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -474,14 +492,19 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "High Current",
+        "pattern": "+12V"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Gerbers/v4.0/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -595,28 +618,28 @@
       "Root"
     ],
     [
-      "28e95730-bc0a-4e8d-908a-468cb9cc73a7",
-      "8x Valve Module"
-    ],
-    [
-      "925bc477-cdad-4ad0-850c-24d99e6871a3",
-      "8x Valve Module1"
-    ],
-    [
-      "3fd6c6a5-afe0-41c8-91d2-4f2754fe6312",
-      "8x Valve Module2"
+      "999484a5-c927-4db7-9bcb-68767aa4e697",
+      "8x Valve Module-1"
     ],
     [
       "e2dc6b45-b85e-4cbf-a6e5-be7535d4542e",
-      "8x Valve Module3"
+      "8x Valve Module-2"
+    ],
+    [
+      "28e95730-bc0a-4e8d-908a-468cb9cc73a7",
+      "8x Valve Module-3"
+    ],
+    [
+      "3fd6c6a5-afe0-41c8-91d2-4f2754fe6312",
+      "8x Valve Module-4"
     ],
     [
       "69fb9547-4524-4e7d-9a6b-bf49a23c5bde",
-      "8x Valve Module4"
+      "8x Valve Module-5"
     ],
     [
-      "999484a5-c927-4db7-9bcb-68767aa4e697",
-      "8x Valve Module5"
+      "925bc477-cdad-4ad0-850c-24d99e6871a3",
+      "8x Valve Module-6"
     ],
     [
       "189826bc-e86f-4673-87b3-0d281cb23bde",
