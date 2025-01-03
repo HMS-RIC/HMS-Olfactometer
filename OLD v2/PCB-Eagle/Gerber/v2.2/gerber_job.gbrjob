@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2023-10-13T14:57:16Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.0"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.5342,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "HMS_Olfactometer_v2.2"
+        },
+        "Owner": "Ofer Mazor <ofer@hms.harvard.edu>",
+        "Size": {
+            "X": 279.4,
+            "Y": 137.16
+        }
+    }
+}
