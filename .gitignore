@@ -1,7 +1,8 @@
 
+# added by OM
 board2pdf.config.ini
 replicate_layout.log
-
+*.lck
 
 # Created by https://www.toptal.com/developers/gitignore/api/kicad
 # Edit at https://www.toptal.com/developers/gitignore?templates=kicad
