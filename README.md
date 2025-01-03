@@ -1,6 +1,8 @@
 # Multi-Channel Olfactometer Driver Board
 Harvard Medical School (HMS) Research Instrumentation Core
 
+![3D PCB model](Images/Olfactometer-PCB-3D.png)
+
 ## Key Features
 A microcontroller-based circuit to drive the valves, mass flow controllers and other components of a multi-channel olfactometer.
 - Works with Teensy 4.0 (Teensy 3.2 should also work)
