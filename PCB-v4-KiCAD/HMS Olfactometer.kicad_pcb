@@ -7755,7 +7755,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-3"
 			(at 0 6 0)
 			(layer "F.Fab")
 			(uuid "6dfab243-4c95-4599-a386-d1aeb23b34c0")
@@ -10419,7 +10419,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-1"
 			(at 0 6 0)
 			(layer "F.Fab")
 			(uuid "31c7013e-78b5-4fa7-b2ad-d09b45516f10")
@@ -19038,7 +19038,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-2"
 			(at 0 6 0)
 			(layer "F.Fab")
 			(uuid "b371c4ac-537a-4d49-a0d4-3b5ba9644169")
@@ -22561,7 +22561,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-4"
 			(at 0 6 0)
 			(layer "F.Fab")
 			(uuid "ed648e70-f300-4f65-80fb-7111aef31d21")

@@ -7797,14 +7797,13 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-4"
 			(at 45.72 72.6831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_Coaxial:BNC_Amphenol_B6252HB-NPP3G-50_Horizontal"
@@ -8807,14 +8806,13 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-3"
 			(at 45.72 85.3831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_Coaxial:BNC_Amphenol_B6252HB-NPP3G-50_Horizontal"
@@ -9278,14 +9276,13 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-2"
 			(at 45.72 99.3531 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_Coaxial:BNC_Amphenol_B6252HB-NPP3G-50_Horizontal"
@@ -12278,14 +12275,13 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "BNC-1"
 			(at 45.72 112.0531 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_Coaxial:BNC_Amphenol_B6252HB-NPP3G-50_Horizontal"
