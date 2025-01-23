@@ -5,6 +5,9 @@
 	(uuid "d7d8f86e-c8d6-438e-95be-a4e29dfe527f")
 	(paper "USLetter")
 	(title_block
+		(title "HMS Multichannel Olfactometer Driver")
+		(date "2025-01-23")
+		(rev "4.1")
 		(company "HMS Research Instrumentation Core")
 	)
 	(lib_symbols
@@ -7084,7 +7087,6 @@
 	)
 	(label "SCL-1"
 		(at 92.71 83.82 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7095,7 +7097,6 @@
 	)
 	(label "SDA-1"
 		(at 35.56 185.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7106,7 +7107,6 @@
 	)
 	(label "SCL-0"
 		(at 233.68 132.08 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7117,7 +7117,6 @@
 	)
 	(label "SDA-1"
 		(at 35.56 162.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7128,7 +7127,6 @@
 	)
 	(label "SCL-1"
 		(at 35.56 180.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7139,7 +7137,6 @@
 	)
 	(label "SCL-1"
 		(at 35.56 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7150,7 +7147,6 @@
 	)
 	(label "SDA-1"
 		(at 205.74 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7161,7 +7157,6 @@
 	)
 	(label "SDA-1"
 		(at 71.12 162.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7172,7 +7167,6 @@
 	)
 	(label "SDA-1"
 		(at 92.71 86.36 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7183,7 +7177,6 @@
 	)
 	(label "SCL-1"
 		(at 205.74 160.02 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7194,7 +7187,6 @@
 	)
 	(label "SCL-1"
 		(at 71.12 180.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7205,7 +7197,6 @@
 	)
 	(label "SDA-0"
 		(at 226.06 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7216,7 +7207,6 @@
 	)
 	(label "SDA-1"
 		(at 71.12 185.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7227,7 +7217,6 @@
 	)
 	(label "SCL-1"
 		(at 71.12 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10442,16 +10431,16 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 48.26 154.94 0)
+		(at 48.26 157.48 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "71b63d00-65d9-4bf1-a25e-b3f1ea4bf6d2")
 		(property "Reference" "J16"
-			(at 50.8 154.9399 0)
+			(at 50.8 157.4801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10460,7 +10449,7 @@
 			)
 		)
 		(property "Value" "MFC 1"
-			(at 50.8 157.4799 0)
+			(at 50.8 154.9401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10469,7 +10458,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 48.26 154.94 0)
+			(at 48.26 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10478,7 +10467,7 @@
 			)
 		)
 		(property "Datasheet" "WM26835CT-ND ??"
-			(at 48.26 154.94 0)
+			(at 48.26 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10487,7 +10476,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 48.26 154.94 0)
+			(at 48.26 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10591,16 +10580,16 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 48.26 177.8 0)
+		(at 48.26 180.34 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "75c9cd50-4f7e-40b0-a28d-ecd3e7524d7a")
 		(property "Reference" "J17"
-			(at 50.8 177.7999 0)
+			(at 50.8 180.3401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10609,7 +10598,7 @@
 			)
 		)
 		(property "Value" "MFC 3"
-			(at 50.8 180.3399 0)
+			(at 50.8 177.8001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10618,7 +10607,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 48.26 177.8 0)
+			(at 48.26 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10627,7 +10616,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 48.26 177.8 0)
+			(at 48.26 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10636,7 +10625,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 48.26 177.8 0)
+			(at 48.26 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11647,34 +11636,32 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 83.82 154.94 0)
+		(at 83.82 157.48 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "a846b331-48b6-4812-9a61-66ed83c7a3e0")
 		(property "Reference" "J18"
-			(at 86.36 154.9399 0)
+			(at 83.82 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "MFC 2"
-			(at 86.36 157.4799 0)
+			(at 83.82 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 83.82 154.94 0)
+			(at 83.82 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11683,7 +11670,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 83.82 154.94 0)
+			(at 83.82 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11692,7 +11679,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 83.82 154.94 0)
+			(at 83.82 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12597,16 +12584,16 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 83.82 177.8 0)
+		(at 83.82 180.34 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d43721bc-0223-470b-b1ba-0c12213bdb99")
 		(property "Reference" "J19"
-			(at 86.36 177.7999 0)
+			(at 86.36 180.3401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12615,7 +12602,7 @@
 			)
 		)
 		(property "Value" "MFC 4"
-			(at 86.36 180.3399 0)
+			(at 86.36 177.8001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12624,7 +12611,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 83.82 177.8 0)
+			(at 83.82 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12633,7 +12620,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 83.82 177.8 0)
+			(at 83.82 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12642,7 +12629,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 83.82 177.8 0)
+			(at 83.82 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
