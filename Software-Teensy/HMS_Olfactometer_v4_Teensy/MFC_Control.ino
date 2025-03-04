@@ -41,6 +41,13 @@ void setupMFC(uint8_t MFCNum) { // MFCNum is 1-based
 	if (firstTime) {
 	    Wire1.begin();
 	    firstTime = false;
+
+        // Perform SOFT-RESET on *all* MFCs
+        // (This seems to help in situations where Teensy was reset after already communicating with MFCs.)
+        Wire1.beginTransmission(0x00);
+        Wire1.write(0x06);
+        Wire1.endTransmission();
+        delay(500);
 	}
 
 	uint8_t addr;
@@ -83,6 +90,12 @@ void setupMFC(uint8_t MFCNum) { // MFCNum is 1-based
     Serial.print("serialNumber: ");
     PrintUint64(serialNumber);
     Serial.println(")");
+
+    startContinuousMeasurement(MFCNum);
+    return;
+}
+
+bool startContinuousMeasurement(uint8_t MFCNum) {
     error = MFC[MFCNum-1].startAirContinuousMeasurement();
     if (error != NO_ERROR) {
         Serial.print("MFC ");
@@ -91,9 +104,9 @@ void setupMFC(uint8_t MFCNum) { // MFCNum is 1-based
         errorToString(error, errorMessage, sizeof errorMessage);
         Serial.print(errorMessage);
         Serial.println(" ###");
-        return;
+        return true;
     }
-    return;
+    return false;
 }
 
 float getMFCFlowRate(uint8_t MFCNum) {

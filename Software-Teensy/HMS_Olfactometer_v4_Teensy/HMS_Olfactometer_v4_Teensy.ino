@@ -27,10 +27,10 @@ void setup() {
 
 void loop() {
 
-  // 1) Act on USB commands:
+  // Option 1) Act on USB commands:
   // readFromUSB();
 
-  // 2) Or just put your main code directly here, to run repeatedly:
+  // Option 2) Or just put your main code directly here, to run repeatedly:
   // Typically used for troubleshooting
 
   delay(1000);
@@ -43,6 +43,24 @@ void loop() {
   activateAuxValve(1);
   delay(500);
   deactivateAuxValve(1);
+
+
+  delay(1000);
+  Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(CARRIER_MFC));
+  delay(1000);
+  setMFCFlowRate(CARRIER_MFC, 1.5); delay(150);
+  Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(CARRIER_MFC));
+  delay(1000);
+  setMFCFlowRate(CARRIER_MFC, 2.5); delay(150);
+  Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(CARRIER_MFC));
+  delay(1000);
+  setMFCFlowRate(CARRIER_MFC, 0); delay(150);
+  Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(CARRIER_MFC));
+
 }
 
 
