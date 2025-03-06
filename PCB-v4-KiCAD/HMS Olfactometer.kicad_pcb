@@ -4290,7 +4290,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "76c0a9a2-2d2e-430c-8cf4-93fe1a798618")
@@ -4302,7 +4302,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d98dfc5b-56e6-41c3-8c92-6012fe91e8e8")
@@ -4314,7 +4314,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b0e67735-406c-4741-a531-91893e022c13")
@@ -5988,7 +5988,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4f3b2c63-6093-4d3c-9c92-2bb63df0a142")
@@ -6000,7 +6000,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c89962bd-6e5e-402f-b55a-fddd55c7244e")
@@ -6012,7 +6012,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "10539d4b-a54d-4745-b080-bed2318d8d82")
@@ -20265,7 +20265,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8b7957ac-7554-4bf5-8776-7ef7a36b702c")
@@ -20277,7 +20277,7 @@
 			)
 		)
 		(property "Datasheet" "WM26835CT-ND ??"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3cf1730b-2eaf-487f-b84e-76ef88077b7b")
@@ -20289,7 +20289,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c450319c-d53b-4b48-842e-e5690b56f27d")
@@ -24201,7 +24201,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Sensirion:CONN_50556806xx_MOL"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a88acf94-2d19-49b4-9a6c-3e3ffb5b6dab")
@@ -24213,7 +24213,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5e292265-c8ab-4d0c-b7b9-20943d5f4755")
@@ -24225,7 +24225,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1165536e-5b0c-4944-a86c-b7ebc6ef6b2f")
@@ -26288,7 +26288,7 @@
 			(justify left)
 		)
 	)
-	(gr_text "Teensy 4.0 or 3.2"
+	(gr_text "Teensy 4.0"
 		(at 68.58 63.5 90)
 		(layer "F.SilkS")
 		(uuid "18a7902a-c7dd-4968-b543-6d8d017330a0")
