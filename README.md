@@ -5,7 +5,7 @@ Harvard Medical School (HMS) Research Instrumentation Core
 
 ## Key Features
 A microcontroller-based circuit to drive the valves, mass flow controllers and other components of a multi-channel olfactometer.
-- Works with Teensy 4.0 (Teensy 3.2 should also work)
+- Works with Teensy 4.0
 - Can communicate with a PC over USB/Serial
 - Drives up to six 8-valve manifolds (i.e., up to 48 *odor* valves)
 - Plus 8 more stand-alone connections for 3-way valves (for *blank*, *timing*, and other valves)

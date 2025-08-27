@@ -149,6 +149,15 @@ void interpretUSBMessage(String message) {
       break;
 
 
+    // F: re-start MFC [F]low control and measurement
+    case 'F':
+    case 'f':
+      Serial.print(startContinuousMeasurement(CARRIER_MFC));
+      Serial.print(startContinuousMeasurement(ODOR_MFC));
+      Serial.println("Re-Starting MFCs for continuous flow control & measurement");
+      break;
+
+
     // A: opens [A]ux valve
     case 'A':
     case 'a':

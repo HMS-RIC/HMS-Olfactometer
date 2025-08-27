@@ -122,6 +122,8 @@ float getMFCFlowRate(uint8_t MFCNum) {
         Serial.print("Error trying to execute readFlow(): ");
         errorToString(error, errorMessage, sizeof errorMessage);
         Serial.println(errorMessage);
+        Serial.println("This can happen when air flow is blocked and MFC flow setting is >0.");
+        Serial.println("Make sure MFC has input pressure, check for blockage, and then restart 'continuous measurement' mode on MFC.");
         return -1;
     }
     return(aFlow);
