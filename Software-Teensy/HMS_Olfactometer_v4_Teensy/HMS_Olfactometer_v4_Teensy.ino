@@ -47,6 +47,23 @@ void loop() {
 
   delay(1000);
   Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(ODOR_MFC));
+  delay(1000);
+  setMFCFlowRate(ODOR_MFC, 1.5); delay(150);
+  Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(ODOR_MFC));
+  delay(1000);
+  setMFCFlowRate(ODOR_MFC, 2.5); delay(150);
+  Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(ODOR_MFC));
+  delay(1000);
+  setMFCFlowRate(ODOR_MFC, 0); delay(150);
+  Serial.print("Flow: ");
+  Serial.println(getMFCFlowRate(ODOR_MFC));
+
+
+  delay(1000);
+  Serial.print("Flow: ");
   Serial.println(getMFCFlowRate(CARRIER_MFC));
   delay(1000);
   setMFCFlowRate(CARRIER_MFC, 1.5); delay(150);
@@ -60,6 +77,7 @@ void loop() {
   setMFCFlowRate(CARRIER_MFC, 0); delay(150);
   Serial.print("Flow: ");
   Serial.println(getMFCFlowRate(CARRIER_MFC));
+
 
 }
 
