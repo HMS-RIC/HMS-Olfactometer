@@ -17,7 +17,7 @@ A microcontroller-based circuit to drive the valves, mass flow controllers and o
 
 
 ## PCB Fabrication
-The full fabrication design is included in the [Gerber Zip File](PCB-KiCAD/Gerbers/HMS_Olfactometer_v4.1.zip?raw=true). You can upload this file to any PCB fabricator to get a quote and place an order. (The board does not have any special features, so the default settings for PCB manufacture are probably fine.) One relatively low-cost option for this board is the $33/board (3 board minimum) special at [Advanced Circuits](https://www.advancedpcb.com/en-us/33-each-special/).
+The full fabrication design is included in the [Gerber Zip File](PCB-v4-KiCAD/Gerbers/HMS_Olfactometer_v4.1.zip?raw=true). You can upload this file to any PCB fabricator to get a quote and place an order. (The board does not have any special features, so the default settings for PCB manufacture are probably fine.) One relatively low-cost option for this board is the $33/board (3 board minimum) special at [Advanced Circuits](https://www.advancedpcb.com/en-us/33-each-special/).
 
 ## PCB Assembly
 A full list of components is listed in the BOM (bill of materials) spreadsheet. Note that some of the components are options and can be left unpopulated if you don't plan to use them.
